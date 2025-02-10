@@ -1,0 +1,13 @@
+name: Cretae a comment on new issues
+
+on: 
+  issues:
+    types: [opened]
+
+jobs: 
+  comment-with-action:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: "dump gtihub context"  
+        run: echo '${{ toJSON(github.event) }}' | jq
+        shell: bash
